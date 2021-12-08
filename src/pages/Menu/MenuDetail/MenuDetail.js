@@ -6,7 +6,7 @@ import styles from './MenuDetail.styles';
 
 export default function MenuDetail() {
   const route = useRoute();
-  const {fd} = route.params;
+  const {menuInfo} = route.params;
 
   const renderIngredients = item => {
     return (
@@ -19,12 +19,12 @@ export default function MenuDetail() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.label}>Name: {fd.name}</Text>
-        <Text style={styles.label}>Description: {fd.description}</Text>
-        <Text style={styles.label}>Price: {fd.price}</Text>
+        <Text style={styles.label}>Name: {menuInfo.name}</Text>
+        <Text style={styles.label}>Description: {menuInfo.description}</Text>
+        <Text style={styles.label}>Price: {menuInfo.price}</Text>
         <Text style={styles.label}>Ingredients:</Text>
         <View style={styles.ingredients}>
-          {fd.ingredients.split(',').map(renderIngredients)}
+          {menuInfo.ingredients.split(',').map(renderIngredients)}
         </View>
       </View>
     </SafeAreaView>

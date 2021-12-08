@@ -6,12 +6,13 @@ import styles from './Menu.styles';
 import MenuCard from '../../../components/cards/MenuCard';
 
 import mockData from '../../../MOCK_DATA.json';
+import routes from '../../../navigation/routes';
 
 export default function Menu() {
   const navigation = useNavigation();
 
   function handleNavigateMenuCreate(selectedMenu) {
-    navigation.navigate('CreateMenuPage', {menu: selectedMenu});
+    navigation.navigate(routes.CREATE_MENU_PAGE, {menu: selectedMenu});
   }
 
   const renderMenu = ({item}) => (
