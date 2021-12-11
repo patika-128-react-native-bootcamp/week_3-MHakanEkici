@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Drawer = createDrawerNavigator();
 
-export default function Navigation() {
+export default function Navigation() {               
   return (
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{headerShown: false}}>
@@ -24,7 +24,7 @@ export default function Navigation() {
             drawerActiveTintColor: '#ab47bc',
           }}
         />
-        <Drawer.Screen
+        <Drawer.Screen   
           name="MenuStack"
           component={MenuStack}
           options={{
@@ -45,7 +45,7 @@ export default function Navigation() {
             ),
             drawerActiveTintColor: '#ab47bc',
           }}
-        />
+        />        
       </Drawer.Navigator>
     </NavigationContainer>
   );

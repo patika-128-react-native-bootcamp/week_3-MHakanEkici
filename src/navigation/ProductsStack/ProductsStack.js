@@ -3,14 +3,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Products from '../../pages/Product/Products';
 import ProductDetail from '../../pages/Product/ProductDetail';
+import routes from '../routes';
 
 const Stack = createNativeStackNavigator();
 
-export default function ProductsStack() {
+export default function ProductsStack() { 
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="PrdctsPage"
+        name={routes.PRODUCTS_PAGE}
         component={Products}
         options={{
           headerTintColor: 'black',
@@ -22,7 +23,7 @@ export default function ProductsStack() {
         }}
       />
       <Stack.Screen
-        name="PrdctDtlPage"
+        name={routes.PRODUCT_DETAIL_PAGE}
         component={ProductDetail}
         options={{
           headerTintColor: 'black',

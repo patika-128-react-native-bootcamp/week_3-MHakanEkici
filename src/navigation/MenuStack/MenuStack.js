@@ -4,14 +4,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Menu from '../../pages/Menu/Menu';
 import MenuDetail from '../../pages/Menu/MenuDetail';
 import CreateMenu from '../../pages/Menu/CreateMenu';
+import routes from '../routes';
 
 const Stack = createNativeStackNavigator();
 
-export default function MenuStck() {
+export default function MenuStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="MenuPage"
+        name={routes.MENU_PAGE}
         component={Menu}
         options={{
           headerTintColor: 'black',
@@ -23,7 +24,7 @@ export default function MenuStck() {
         }}
       />
       <Stack.Screen
-        name="CreateMenuPage"
+        name={routes.CREATE_MENU_PAGE}
         component={CreateMenu}
         options={{
           headerTintColor: 'black',
@@ -35,7 +36,7 @@ export default function MenuStck() {
         }}
       />
       <Stack.Screen
-        name="MenuDetailPage"
+        name={routes.MENU_DETAIL_PAGE}
         component={MenuDetail}
         options={{
           headerTintColor: 'black',

@@ -5,6 +5,7 @@ import {SafeAreaView, FlatList} from 'react-native';
 import styles from './Tables.styles';
 import TableCard from '../../../components/cards/TableCard';
 import mock_data from '../../../MOCK_DATA.json';
+import routes from '../../../navigation/routes';
 
 export default function Table() {
   const route = useRoute();
@@ -12,12 +13,8 @@ export default function Table() {
   const [tables, setTables] = useState(mock_data.tables);
 
   function handleNavigateTableDetail(selectedTable) {
-    navigation.navigate('TableUpdatePage', {table: selectedTable});
+    navigation.navigate(routes.TABLE_UPDATE_PAGE, {table: selectedTable});
   }
-
-  const renderTables = ({item}) => (
-    <TableCard item={item} onSelect={() => handleNavigateTableDetail(item)} />
-  );
 
   useEffect(() => {
     if (!route.params) {
@@ -31,9 +28,13 @@ export default function Table() {
     setTables(newTables);
   }, [route.params]);
 
+  const renderProducts = ({item}) => (
+    <TableCard item={item} onSelect={() => handleNavigateTableDetail(item)} />
+  );
+
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={tables} renderItem={renderTables} numColumns={2} />
+      <FlatList data={tables} numColumns={2} renderItem={renderProducts} />
     </SafeAreaView>
   );
 }
